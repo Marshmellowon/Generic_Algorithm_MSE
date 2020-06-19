@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import random as rn
 
+
 # TODO: a의 최적해를 찾아야 한다.
 # 데이터 셋 찾음
 # MSE 오차율을 유전알고리즘으로 구하기
@@ -16,8 +17,31 @@ import random as rn
 # TODO: 작은값 선택하기
 
 # ----------------유전알고리즘으로 기울기 a의 최적해 찾기-----------------
+# 초기 식 y = -ax
+def nota(t, h):
+    return -h / t
 
 
+# 초기 a 4개 구하기
+def init(tmin, tmax, hmin, hmax):
+    a = []
+    for i in range(4):
+        temp = rn.randint(tmin, tmax)
+        hum = rn.randint(hmin, hmax)
+
+        a.append(round(nota(temp, hum)))
+    return a
+
+
+# 유전알고리즘 main---------
+tempmin = 5
+tempmax = 35
+hummin = 10
+hummax = 95
+
+initreturn = init(tempmin, tempmax, hummin, hummax)
+
+print(initreturn)
 breakpoint()
 # #####################################################################
 
