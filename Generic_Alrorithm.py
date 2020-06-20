@@ -39,7 +39,7 @@ def predicted(a, xVal):
     print("a", a)
     print("xVal", xVal)
     for i in range(len(xVal)):
-        y = (a - 0.5) * xVal[i] +50
+        y = (a - 0.5) * xVal[i] + 50
         yArr.append(float(y))
     return yArr
 
@@ -111,7 +111,7 @@ def invert(char):
     reta = 0
 
     for i in range(5):
-        p = 1 / 32
+        p = 1 / 5
         if ran < p:
             if abinstr[5:6] == "1":
                 reta = a & ~(2 << 3)
@@ -220,28 +220,14 @@ predictgraph = pd.DataFrame(
 print(list2)
 
 plt.figure()
-plt.subplot(2, 1, 2)
 plt.scatter(temp['temp'], temp['hum'], marker="o")
 plt.scatter(predictgraph["temp2"], predictgraph["hum2"], marker="x")
 plt.xlabel('temperature')
 plt.ylabel('humedity')
+plt.savefig("initial.png")
 
-plt.subplot(2, 2, 2)
-plt.scatter(MSEGrapg['aValue'], MSEGrapg['MSE'], marker="o")
-plt.xlabel('temperature')
-plt.ylabel('humedity')
-plt.show()
-
-breakpoint()
-# #####################################################################
-
-
-temp = pd.DataFrame(
-    {"temp": arr, "hum": arr2}
-)
-# ########################################################################
-
-# -----------------그래프 그리기----------------------
 plt.figure()
-
-plt.show()
+plt.scatter(MSEGrapg['aValue'], MSEGrapg['MSE'], marker="o")
+plt.xlabel('inclination')
+plt.ylabel('MSE')
+plt.savefig("MSE.png")
