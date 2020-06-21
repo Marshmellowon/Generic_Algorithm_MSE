@@ -10,11 +10,10 @@ import math
 
 # 데이터 셋 찾음
 # MSE 오차율을 유전알고리즘으로 구하기
-# 기울기 음수인 y = -ax 그래프.
+# 기울기 음수인 y = ax 그래프.
 # a를 구하기위한 랜덤값 x와 y
 # x와 y를 가지고 원래 데이터와 비교하여 오차율(MSE) 계산
 # 오차율이 가장 작은 값을 구하기위해 기울기에 따른 오차율 유전알고리즘
-
 # MSE 그래프 가로축 기울기, 세로축은 오차율
 
 # ----------------주어진 데이터셋--------------------
@@ -59,13 +58,13 @@ def predicted(a, xVal):
 
 
 # 초기 a 4개 구하기
-def init(tmin, tmax, hmin, hmax):
+def init(Open1, Open2, Avg1, Avg2):
     a = []
     for i in range(4):
-        temp = rn.randint(tmin, tmax)
-        hum = rn.randint(hmin, hmax)
+        OPEN = rn.randint(Open1, Open2)
+        AVG = rn.randint(Avg1, Avg2)
 
-        a.append(math.ceil(nota(temp, hum)))
+        a.append(math.ceil(nota(OPEN, AVG)))
     return a
 
 
@@ -161,7 +160,7 @@ def MSE(predict, tempdata):
     initgraph = []
     yYval = []
     for i in range(4):
-        for j in range(1500):
+        for j in range(1000):
             initnotation = predict[i] * tempdata[j]
             yY = MSEexpression(arr2[j], initnotation)
             yYval.append(float(yY))
@@ -186,7 +185,7 @@ Avgmax = 300
 x = []
 y = []
 list2 = []
-TempPred = []
+RanOpenprice = []
 
 # 반복 100번
 for i in range(100):
@@ -214,8 +213,8 @@ for i in range(100):
     y += MSEarr
 
     # 예측된 기울기 값과 랜덤 온도로 그래프 예측하기위한 값
-    temperature = rn.randint(2, 300)
-    TempPred.append(temperature)
+    Open_Price = rn.randint(2, 300)
+    RanOpenprice.append(Open_Price)
 
     # x와 y에 예측된 기울기와 MSE값을 넣은다.
     for u in range(len(y)):
@@ -226,37 +225,38 @@ minX = minx(min(y), list2)
 print("최소 MSE 기울기: ", minX)
 
 # 그래프 예측을 위한 계산(predicted 함수 사용)
-yPredict = predicted(minX, TempPred)
+yPredict = predicted(minX, RanOpenprice)
 
 # pandas library로 DataFrame 지정
 MSEGrapg = pd.DataFrame(
     {"aValue": x, "MSE": y}
 )
 
-temp = pd.DataFrame(
+OpPrice = pd.DataFrame(
     {"temp": arr, "hum": avg}
 )
 
 predictgraph = pd.DataFrame(
-    {"temp2": TempPred, "hum2": yPredict}
+    {"temp2": RanOpenprice, "hum2": yPredict}
 )
 
 # 그래프 그리기
 plt.figure()
 # 기존 데이터의 그래프를 그린다
-plt.scatter(temp['temp'], temp['hum'], marker="o")
+one = plt.scatter(OpPrice['temp'], OpPrice['hum'], marker="o")
 # 예측된 기울기로 그래프를 예측한다.
-plt.scatter(predictgraph["temp2"], predictgraph["hum2"], marker="x")
-plt.xlabel('temperature')
-plt.ylabel('humedity')
-plt.savefig("initial.png")
+two = plt.scatter(predictgraph["temp2"], predictgraph["hum2"], marker="x")
+plt.legend(handles=(one, two), labels=("Initial data", "predicted data"), loc="upper left")
+plt.xlabel('Open_Price')
+plt.ylabel('Average_Price')
+plt.savefig("Tesla.png")
 
 plt.figure()
 # MSE 평가지표 그래프
-plt.scatter(MSEGrapg['aValue'], MSEGrapg['MSE'], marker="o")
-plt.xlabel('inclination')
+MSEleg = plt.scatter(MSEGrapg['aValue'], MSEGrapg['MSE'], marker="o")
+plt.xlabel('Inclination')
 plt.ylabel('MSE')
-plt.savefig("MSE.png")
+plt.savefig("TeslaMSE.png")
 
 # 그래프 띄우기
 plt.show()
