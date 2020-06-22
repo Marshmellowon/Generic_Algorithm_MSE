@@ -41,7 +41,7 @@ for i in range(len(arr2)):
 
 # ----------------유전알고리즘으로 기울기 a의 최적해 찾기-----------------
 # 초기 식 y = ax
-def nota(t, h):
+def expression(t, h):
     return h / t
 
 
@@ -64,7 +64,7 @@ def init(Open1, Open2, Avg1, Avg2):
         OPEN = rn.randint(Open1, Open2)
         AVG = rn.randint(Avg1, Avg2)
 
-        a.append(math.ceil(nota(OPEN, AVG)))
+        a.append(math.ceil(expression(OPEN, AVG)))
     return a
 
 
