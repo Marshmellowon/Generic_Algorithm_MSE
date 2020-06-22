@@ -93,7 +93,7 @@ def selection(Aarr):
 
 # bin() format
 def binformat(x):
-    binformat = '{0:>8}'.format(bin(x)).replace("b", "0").replace(" ", "0").replace("-", "0")
+    binformat = '{0:>8}'.format(bin(x)).replace("b", "0").replace(" ", "0")
     return binformat
 
 
@@ -119,22 +119,24 @@ def crossover(arr):
     return strarr
 
 
+aa = 0
+
+
 # 돌연변이 연산
 def invert(char):
     ran = rn.random()
     a = int(char, 2)  # 숫자
-    abin = binformat(a)
-    abinstr = str(abin)
-    reta = 0
-    for i in range(5):
-        p = 1 / 50
-        if ran < p:
-            if abinstr[5:6] == "1":
-                reta = a & ~(1 << 4)
+    b = int("1000", 2)
 
-            elif abinstr[5:6] == "0":
-                reta = a | (1 << 4)
-            return reta
+    for i in range(5):
+        p = 1 / 30
+        if ran < p:
+            if char[4:5] == "1":
+                aa = a - b
+
+            elif char[4:5] == "0":
+                aa = a + b
+            return aa
         return a
 
 
@@ -206,6 +208,7 @@ for i in range(100):
     print("mutationed: ", mutationed)
     print("MSEarr:", MSEarr)
     print("예측된 기울기:", min(mutationed))
+    print("inv: ", invert("00101000"))
     print("-----------------------")
 
     # x와 y에 예측된 기울기와 MSE값을 넣은다.
