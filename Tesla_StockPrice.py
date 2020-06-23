@@ -6,7 +6,6 @@ import math
 
 # Kaggle에서 Tesla의 주식 데이터를 사용하였다.
 # https://www.kaggle.com/rpaguirre/tesla-stock-price
-# TODO: 변수명 바꾸기
 
 # 데이터 셋 찾음
 # MSE 오차율을 유전알고리즘으로 구하기
@@ -119,9 +118,6 @@ def crossover(arr):
     return strarr
 
 
-aa = 0
-
-
 # 돌연변이 연산
 def invert(char):
     ran = rn.random()
@@ -208,7 +204,6 @@ for i in range(100):
     print("mutationed: ", mutationed)
     print("MSEarr:", MSEarr)
     print("예측된 기울기:", min(mutationed))
-    print("inv: ", invert("00101000"))
     print("-----------------------")
 
     # x와 y에 예측된 기울기와 MSE값을 넣은다.
