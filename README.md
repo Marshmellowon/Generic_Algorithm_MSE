@@ -11,7 +11,7 @@
 
 ## 사용할 데이터셋
 
-- Kaggle에서 Tesla Stock Price 데이터를 사용하였다.
+- Kaggle에서 Tesla Stock Price 데이터를 사용하였다.   
   [Tesla Stock Price(Kaggle)](https://www.kaggle.com/rpaguirre/tesla-stock-price)
 
 - Open 열과 High열, Low열을 사용하였다. Open 가격에 따른 High와 Low의 평균값을 나타내었다.
@@ -20,10 +20,10 @@
 
 ### 데이터 가져오기
 
-Tesla Stock Price의 csv 파일의 값을 읽어 배열에 저장하는 코드이다.  
+- Tesla Stock Price의 csv 파일의 값을 읽어 배열에 저장하는 코드이다.  
 arr에는 Open 가격을 넣고 arr2와 arr3에 각각 High와 Low값을 가져온 후 평균값을 avg 배열에 저장 하였다.
 
-저장한 데이터의 형식은 float형을 사용하였다.
+- 저장한 데이터의 형식은 float형을 사용하였다.
 
 ```python
 # ----------------주어진 데이터셋--------------------
@@ -52,8 +52,8 @@ for i in range(len(arr2)):
 
 ### 초기 후보해 집합을 생성
 
-먼저 초기 후보해 집합을 구한다.
-Open가격 최소와 최대, 평균가격의 최소와 최대를 지정한다.
+- 먼저 초기 후보해 집합을 구한다.
+- Open가격 최소와 최대, 평균가격의 최소와 최대를 지정한다.
 
 ```python
 Openmin = 2
@@ -62,7 +62,7 @@ Avgmin = 2
 Avgmax = 300
 ```
 
-4개의 값을 받아와 기울기 a의 값 4개를 얻는다.
+- 4개의 값을 받아와 기울기 a의 값 4개를 얻는다.
 
 ```python
 # 초기 식 y = ax
