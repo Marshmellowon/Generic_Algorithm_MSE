@@ -268,6 +268,10 @@ MSEarr: [67913541.24469241, 135827082.48938468, 203740623.734077, 271654164.9787
 - 유전 알고리즘을 파이썬으로 구현해 보았다. 이차함수나 지수함수가 나오는 데이터를 이용하고 싶었지만, 데이터를 찾는것이 쉽지 않았다.
 - 처음에는 구현하기 힘들것이라고 생각했었다. 알고리즘 동작 구성을 이해하고, 차근차근 구현해 보니 잘 짜여졌다.
 - 기상청에서 제공하는 서울시의 온도와 습도의 관계 데이터도 사용해 보았지만, Tesla Stock Price 데이터가 좀 더 정확한 것 같아 선택하게 되었다.
+
+### code
+- [Tesla Stock Price](https://github.com/Marshmellowon/Generic_Algorithm_MSE/blob/master/Tesla_StockPrice.py)
+- [서울시 온도와 습도의 관계](https://github.com/Marshmellowon/Generic_Algorithm_MSE/blob/master/Generic_Alrorithm.py)
 ## REFERENCES
 
 - [유전알고리즘으로 그네 타는 법 학습하기](https://www.youtube.com/watch?v=Yr_nRnqeDp0)
