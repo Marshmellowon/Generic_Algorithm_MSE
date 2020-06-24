@@ -260,7 +260,7 @@ MSEarr: [67913541.24469241, 135827082.48938468, 203740623.734077, 271654164.9787
 
 ---
 
-최소 MSE 기울기: 1.0
+최소 MSE를 만족하는 기울기: 1.0
 ```
 
 ## 정리
@@ -270,8 +270,8 @@ MSEarr: [67913541.24469241, 135827082.48938468, 203740623.734077, 271654164.9787
 - 기상청에서 제공하는 서울시의 온도와 습도의 관계 데이터도 사용해 보았지만, Tesla Stock Price 데이터가 좀 더 정확한 것 같아 선택하게 되었다.
 ## REFERENCES
 
-[유전알고리즘으로 그네 타는 법 학습하기](https://www.youtube.com/watch?v=Yr_nRnqeDp0)
-[untitledtblog](https://untitledtblog.tistory.com/110)
-[morningcoding](https://morningcoding.tistory.com/entry/Python-71-ScikitLearn%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%84%EC%84%A0%ED%98%95-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D)
+- [유전알고리즘으로 그네 타는 법 학습하기](https://www.youtube.com/watch?v=Yr_nRnqeDp0)
+- [untitledtblog](https://untitledtblog.tistory.com/110)
+- [morningcoding](https://morningcoding.tistory.com/entry/Python-71-ScikitLearn%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%84%EC%84%A0%ED%98%95-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D)
 
 [![time tracker](https://wakatime.com/badge/github/Marshmellowon/Generic_Algorithm_MSE.svg)](https://wakatime.com/badge/github/Marshmellowon/Generic_Algorithm_MSE)
